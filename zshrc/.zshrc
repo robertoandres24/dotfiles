@@ -100,9 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/roberto/Downloads/google-cloud-sdk-323.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/roberto/Downloads/google-cloud-sdk-323.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
