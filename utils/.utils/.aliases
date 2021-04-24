@@ -1,0 +1,7 @@
+# Example aliases
+alias zshconfig="vi ~/.zshrc"
+alias ohmyzsh="vi ~/.oh-my-zsh"
+alias pbcopy="xclip -sel clip"
+alias pbpaste="xclip -selection clipboard -o"
+alias pbselect="xclip -selection primary -o"
+alias open='xdg-open'
