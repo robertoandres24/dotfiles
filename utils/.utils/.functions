@@ -1,1 +1,26 @@
 touch2() { mkdir -p "$(dirname "$1")" && touch "$1" ; }
+
+function weather() {
+    for arg in "$@"
+    do
+        case $arg in
+            --city=*)
+                city="${arg#*=}"
+                shift
+                ;;
+            --param2=*)
+                param2="${arg#*=}"
+                shift
+                ;;
+            *)
+                # Handle unrecognized parameters or display an error message
+                echo "Unrecognized parameter: $arg"
+                return 1
+                ;;
+        esac
+    done
+
+    # Code to execute with the parameters
+    curl wttr.in/$city
+    # echo "Param2: $param2"
+}
