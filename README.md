@@ -1,4 +1,6 @@
 ```sh
+# Sync SymLinks in local
+stow --adopt -nvt ~ *
 # Clone the repo, and delete this README.md file
 # Inside the cloned dotfiles folder, execute:
 stow -nvt ~ *
