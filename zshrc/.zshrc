@@ -1,19 +1,32 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# Check the operating system and set the ZSH variable accordingly
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # For macOS (Darwin)
+  export ZSH="/Users/roberto/.oh-my-zsh"
+else
+  # For Linux and other operating systems
+  export ZSH="/home/roberto/.oh-my-zsh"
+fi
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/roberto/.oh-my-zsh"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+# Check the operating system and set the NVM_DIR variable accordingly
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # For macOS (Darwin)
+  export NVM_DIR="/opt/homebrew/opt/nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/etc/bash_completion.d/nvm" ] && \. "$NVM_DIR/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+else
+  # For Linux and other operating systems
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell-custom"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,7 +86,7 @@ ZSH_THEME="robbyrussell-custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions docker docker-compose)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,3 +132,6 @@ if [ -f ~/.utils/.functions ]; then
 else
     print "404: ~/.utils/.functions file not found"
 fi
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
