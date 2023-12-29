@@ -8,3 +8,4 @@ alias open='xdg-open'
 alias sysinfo="neofetch"
 # GIT ---------------------------------------
 alias gv="git --version"
+alias obsidian_sync='cd ~/Code/personal/obsidian && ggpull && gaa && git commit -m "sync" && ggpush'
