@@ -1,3 +1,12 @@
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+export PATH
+
+# add custom, local installations to PATH
+PATH=/opt/homebrew/bin:/usr/local/bin:/usr/local/sbin:"$PATH"
+
+
+# add MacPorts to PATH
+PATH=/opt/local/bin:/opt/local/sbin:"$PATH"
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Check the operating system and set the ZSH variable accordingly
@@ -114,12 +123,6 @@ source $ZSH/oh-my-zsh.sh
 #
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/roberto/Downloads/google-cloud-sdk-323.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/roberto/Downloads/google-cloud-sdk-323.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/roberto/Downloads/google-cloud-sdk-323.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/roberto/Downloads/google-cloud-sdk-323.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Utils
 if [ -f ~/.utils/.aliases ]; then
     source ~/.utils/.aliases
@@ -135,3 +138,9 @@ fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/roberto/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/roberto/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/roberto/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/roberto/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
